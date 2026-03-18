@@ -1,29 +1,15 @@
-public class HelloApp {
+public class UC6HelloArgs {
     public static void main(String[] args) {
-
-        String name;
-
-
-        if (args.length > 0) {
-
-
-            StringBuilder nameBuilder = new StringBuilder();
-            boolean first = true;
-
-            for (String n : args) {
-                if (!first) {
-                    nameBuilder.append(", ");
-                }
-                nameBuilder.append(n);
-                first = false;
-            }
-
-            name = nameBuilder.toString();
-
-        } else {
-            name = "World"; 
+     
+        if (args.length == 0) {
+            System.out.println("No command-line arguments provided.");
+            return;
         }
-
-        System.out.println("Hello, " + name + "!");
+        String result = "Hello ";
+        for (int i = 0; i < args.length; i++) {
+            result += args[i] + ", ";
+        }
+        result = result.substring(0, result.length() - 2);
+        System.out.println(result);
     }
 }
