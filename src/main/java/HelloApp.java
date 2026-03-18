@@ -1,15 +1,16 @@
-public class UC6HelloArgs {
+public class UC7HelloArgs {
     public static void main(String[] args) {
-     
+
+        // Check if arguments are passed
         if (args.length == 0) {
-            System.out.println("No command-line arguments provided.");
-            return;
+            // Default message
+            System.out.println("Hello User");
+        } else {
+            // Join arguments with comma and space
+            String joinedNames = String.join(", ", args);
+
+            // Display result
+            System.out.println("Hello " + joinedNames);
         }
-        String result = "Hello ";
-        for (int i = 0; i < args.length; i++) {
-            result += args[i] + ", ";
-        }
-        result = result.substring(0, result.length() - 2);
-        System.out.println(result);
     }
 }
